@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Calculator
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+<h2>Markdown Calculator App</h2>
+
+<p>
+  Markdown is a reduction of the product price, basing on the inability to sell it at the initial price or original selling price. In other words, markdown is the difference between the original retail price and the actual selling price.
+</p>
+
+<p>This markdown calculator app aims to calculate the markdown price of the amount that you will inpiut.</p>
+
+<p>Pls input the ORIGINAL and SELLING price of the item to be computed below</p>
+
+<ion-item button (click)="buttonClick()">
+  <ion-label>Original Price (Php)</ion-label>
+  <ion-input type = "number" [(ngModel)] = "originalPrice"> </ion-input>
+ </ion-item>
+
+<h1></h1>
+
+<ion-item button (click)="buttonClick()">
+ <ion-label>Selling Price (Php)</ion-label>
+  <ion-input type = "number" [(ngModel)] = "sellingPrice"> </ion-input>>
+</ion-item>
+
+<button ion-button color = "secondary" (click)="compute ()" >Compute</button>
+
+<ion-item *ngIf="savings">
+   <h3> Markdown/Savings: {{savings|currency: '&#8369;' }} </h3>
+  </ion-item>  
+
+<h1></h1>
+
+<ion-item *ngIf="markdownRate">
+   <h3> Markdown Rate: {{markdownRate}} % </h3>
+  </ion-item> 
+
+</ion-content>
